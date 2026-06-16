@@ -105,6 +105,79 @@ Method ke andar code 8 spaces indent hota hai.
 
 ---
 
+## Integrated Learning Path - OOP Concepts Ko Ek Saath Kaise Samjhein
+
+OOP ko alag-alag topics ki tarah ratna difficult lag sakta hai. Isliye ise ek story ke through samjho.
+
+Story:
+
+Hum ek coaching institute ka software bana rahe hain. Hume students, teachers, accounts aur payments manage karne hain. Agar hum normal variables aur functions se sab kuch likhenge, code messy ho sakta hai. OOP help karta hai real-world cheezon ko code mein clean structure dene mein.
+
+Learning path:
+
+| Step | Concept | Kyu Zaroori Hai |
+|---|---|---|
+| 1 | Class | Blueprint banane ke liye |
+| 2 | Object | Actual data/entity banane ke liye |
+| 3 | Constructor | Object create hote hi initial data set karne ke liye |
+| 4 | Methods | Object ke actions define karne ke liye |
+| 5 | Encapsulation | Sensitive data protect karne ke liye |
+| 6 | Inheritance | Common code reuse karne ke liye |
+| 7 | Project | Sab concepts ko real app mein combine karne ke liye |
+
+Simple integrated example:
+
+```python
+class Student:
+    def __init__(self, name, course):
+        self.name = name
+        self.course = course
+
+    def show_details(self):
+        print(f"{self.name} is learning {self.course}")
+
+student1 = Student("Aman", "Python")
+student1.show_details()
+```
+
+Is small code mein:
+
+| OOP Concept | Code mein Kahan Hai |
+|---|---|
+| Class | `class Student:` |
+| Object | `student1` |
+| Constructor | `__init__` |
+| Attribute | `self.name`, `self.course` |
+| Method | `show_details` |
+| `self` | Current object ko refer karta hai |
+
+Line-by-line explanation:
+
+| Line | Code | Explanation |
+|---|---|---|
+| 1 | `class Student:` | Student ka blueprint create hota hai. Har student object isi design se banega. |
+| 2 | `def __init__(self, name, course):` | Constructor define hota hai. Jab object create hoga, name aur course set honge. |
+| 3 | `self.name = name` | Current object ke andar name save hota hai. |
+| 4 | `self.course = course` | Current object ke andar course save hota hai. |
+| 6 | `def show_details(self):` | Student details show karne ka method define hota hai. |
+| 7 | `print(f"{self.name} is learning {self.course}")` | Saved attributes use karke readable message print hota hai. |
+| 9 | `student1 = Student("Aman", "Python")` | Student object create hota hai. Constructor automatically run hota hai. |
+| 10 | `student1.show_details()` | Object ka method call hota hai. |
+
+Output:
+
+```text
+Aman is learning Python
+```
+
+Teaching line:
+
+```text
+Class se object banta hai, constructor object ka data set karta hai, method object ka kaam perform karta hai.
+```
+
+---
+
 ## 1. Object-Oriented Programming Kya Hai?
 
 ### Theory Explanation
@@ -892,6 +965,236 @@ def check_balance(self):
 | Method | `deposit`, `withdraw`, `check_balance` |
 | Encapsulation | `__balance` |
 | Condition | Deposit and withdrawal validation |
+
+---
+
+## OOP Concepts Integrated in One Flow
+
+Ab dekho kaise saare OOP concepts ek project mein naturally connect hote hain.
+
+### Step 1 - Class and Object
+
+Theory:
+
+Pehle hum bank account ka blueprint banate hain. Abhi isme sirf account holder ka naam show karenge.
+
+Code:
+
+```python
+class BankAccount:
+    def show_account(self):
+        print("This is a bank account.")
+
+account1 = BankAccount()
+account1.show_account()
+```
+
+Output:
+
+```text
+This is a bank account.
+```
+
+Line-by-line explanation:
+
+| Line | Code | Explanation |
+|---|---|---|
+| 1 | `class BankAccount:` | Bank account ka blueprint create hota hai. |
+| 2 | `def show_account(self):` | Account information show karne ka method define hota hai. |
+| 3 | `print("This is a bank account.")` | Method call hone par message print hota hai. |
+| 5 | `account1 = BankAccount()` | BankAccount class ka object create hota hai. |
+| 6 | `account1.show_account()` | Object ka method call hota hai. |
+
+### Step 2 - Constructor Add Karna
+
+Theory:
+
+Ab account create hote hi account holder ka naam aur opening balance set karenge. Iske liye constructor use hota hai.
+
+Code:
+
+```python
+class BankAccount:
+    def __init__(self, account_holder, balance):
+        self.account_holder = account_holder
+        self.balance = balance
+
+    def show_account(self):
+        print(f"{self.account_holder} has balance {self.balance}")
+
+account1 = BankAccount("Aman", 5000)
+account1.show_account()
+```
+
+Output:
+
+```text
+Aman has balance 5000
+```
+
+Line-by-line explanation:
+
+| Line | Code | Explanation |
+|---|---|---|
+| 1 | `class BankAccount:` | Bank account blueprint define hota hai. |
+| 2 | `def __init__(self, account_holder, balance):` | Constructor account holder aur balance receive karta hai. |
+| 3 | `self.account_holder = account_holder` | Holder name object mein save hota hai. |
+| 4 | `self.balance = balance` | Balance object mein save hota hai. |
+| 6 | `def show_account(self):` | Account details show karne ka method. |
+| 7 | `print(f"{self.account_holder} has balance {self.balance}")` | Object ke attributes print hote hain. |
+| 9 | `account1 = BankAccount("Aman", 5000)` | Object create hota hai aur constructor run hota hai. |
+| 10 | `account1.show_account()` | Account details print hoti hain. |
+
+### Step 3 - Methods Add Karna
+
+Theory:
+
+Account ke actions deposit aur withdraw hote hain. Yeh actions methods ke form mein class ke andar likhenge.
+
+Code:
+
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def show_balance(self):
+        print("Balance:", self.balance)
+
+account1 = BankAccount(5000)
+account1.deposit(2000)
+account1.show_balance()
+```
+
+Output:
+
+```text
+Balance: 7000
+```
+
+Line-by-line explanation:
+
+| Line | Code | Explanation |
+|---|---|---|
+| 1 | `class BankAccount:` | Bank account class create hoti hai. |
+| 2 | `def __init__(self, balance):` | Constructor initial balance receive karta hai. |
+| 3 | `self.balance = balance` | Balance object mein save hota hai. |
+| 5 | `def deposit(self, amount):` | Deposit method amount receive karta hai. |
+| 6 | `self.balance += amount` | Amount balance mein add hota hai. |
+| 8 | `def show_balance(self):` | Balance display method define hota hai. |
+| 9 | `print("Balance:", self.balance)` | Current balance print hota hai. |
+| 11 | `account1 = BankAccount(5000)` | Object initial balance 5000 ke saath create hota hai. |
+| 12 | `account1.deposit(2000)` | 2000 deposit hota hai. |
+| 13 | `account1.show_balance()` | Updated balance print hota hai. |
+
+### Step 4 - Encapsulation Add Karna
+
+Theory:
+
+Balance sensitive data hai. Isko direct access se protect karna chahiye. Isliye `__balance` use karenge.
+
+Code:
+
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+
+    def show_balance(self):
+        print("Balance:", self.__balance)
+
+account1 = BankAccount(5000)
+account1.deposit(2000)
+account1.show_balance()
+```
+
+Output:
+
+```text
+Balance: 7000
+```
+
+Line-by-line explanation:
+
+| Line | Code | Explanation |
+|---|---|---|
+| 1 | `class BankAccount:` | Bank account class create hoti hai. |
+| 2 | `def __init__(self, balance):` | Constructor balance receive karta hai. |
+| 3 | `self.__balance = balance` | Balance private-like attribute mein save hota hai. |
+| 5 | `def deposit(self, amount):` | Deposit method amount receive karta hai. |
+| 6 | `if amount > 0:` | Sirf positive amount allow hai. |
+| 7 | `self.__balance += amount` | Valid amount balance mein add hota hai. |
+| 9 | `def show_balance(self):` | Balance show karne ka method. |
+| 10 | `print("Balance:", self.__balance)` | Private-like balance class ke andar access hota hai. |
+| 12 | `account1 = BankAccount(5000)` | Account object create hota hai. |
+| 13 | `account1.deposit(2000)` | Deposit method call hota hai. |
+| 14 | `account1.show_balance()` | Updated balance print hota hai. |
+
+### Step 5 - Inheritance Add Karna
+
+Theory:
+
+Agar hum SavingsAccount aur CurrentAccount banana chahein, dono BankAccount se common features inherit kar sakte hain.
+
+Code:
+
+```python
+class BankAccount:
+    def __init__(self, account_holder):
+        self.account_holder = account_holder
+
+    def show_holder(self):
+        print("Account holder:", self.account_holder)
+
+class SavingsAccount(BankAccount):
+    def show_account_type(self):
+        print("Account type: Savings")
+
+account1 = SavingsAccount("Aman")
+account1.show_holder()
+account1.show_account_type()
+```
+
+Output:
+
+```text
+Account holder: Aman
+Account type: Savings
+```
+
+Line-by-line explanation:
+
+| Line | Code | Explanation |
+|---|---|---|
+| 1 | `class BankAccount:` | Parent class create hoti hai. |
+| 2 | `def __init__(self, account_holder):` | Parent constructor holder name receive karta hai. |
+| 3 | `self.account_holder = account_holder` | Holder name object mein save hota hai. |
+| 5 | `def show_holder(self):` | Holder name show karne ka method. |
+| 6 | `print("Account holder:", self.account_holder)` | Holder name print hota hai. |
+| 8 | `class SavingsAccount(BankAccount):` | SavingsAccount child class hai jo BankAccount se inherit kar rahi hai. |
+| 9 | `def show_account_type(self):` | Child class ka own method. |
+| 10 | `print("Account type: Savings")` | Account type print hota hai. |
+| 12 | `account1 = SavingsAccount("Aman")` | Child class ka object create hota hai. Parent constructor run hota hai. |
+| 13 | `account1.show_holder()` | Parent method child object se call hota hai. |
+| 14 | `account1.show_account_type()` | Child method call hota hai. |
+
+Final teaching point:
+
+```text
+Class design deta hai.
+Object actual account banata hai.
+Constructor account ka starting data set karta hai.
+Methods account ke actions perform karte hain.
+Encapsulation balance ko protect karta hai.
+Inheritance common account features reuse karta hai.
+```
 
 ---
 
